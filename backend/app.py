@@ -73,7 +73,6 @@ def count_transactional(text):
     tl = text.lower()
     return sum(1 for p in TRANSACTIONAL_PATTERNS if re.search(p, tl))
 
-@st.cache_resource
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_model():
