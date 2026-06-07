@@ -13,7 +13,7 @@ I trained an ML model on 97,000+ spam and phishing messages, wrapped it in a Fas
 ## 🌐 Live Demo
 
 - **Web App:** [smartshield-ai.streamlit.app](https://smartshield-ai.streamlit.app)
-- **API:** [smartshield-api.onrender.com](https://smartshield-api.onrender.com)
+- **API:** [smartshield-ai-1.onrender.com](https://smartshield-ai-1.onrender.com)
 
 ---
 
@@ -89,21 +89,21 @@ Trained on **97,000+ messages** from multiple sources:
 SmartShield-AI/
 │
 ├── backend/
-│   ├── api.py              # FastAPI server
-│   ├── train.py            # Model training script
-│   ├── predict.py          # CLI prediction tool
-│   ├── app.py              # Streamlit web app
-│   ├── prepare_data.py     # Dataset preparation
-│   ├── feedback.py         # Add samples + retrain pipeline
+│   ├── api.py              
+│   ├── train.py            
+│   ├── predict.py          
+│   ├── app.py              
+│   ├── prepare_data.py     
+│   ├── feedback.py         
 │   └── models/
-│       ├── spam_model.pkl  # Trained ML model
-│       └── vectorizer.pkl  # TF-IDF vectorizer
+│       ├── spam_model.pkl  
+│       └── vectorizer.pkl  
 │
 ├── extension/
-│   ├── manifest.json       # Chrome extension config
-│   ├── content.js          # Extracts text from Gmail/Outlook/WhatsApp
-│   ├── popup.html          # Extension popup UI
-│   └── popup.js            # Extension logic
+│   ├── manifest.json       
+│   ├── content.js          
+│   ├── popup.html          
+│   └── popup.js            
 │
 ├── data/
 │   ├── spam.csv
@@ -123,8 +123,8 @@ SmartShield-AI/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/aasthagandhi101/smartshield-ai.git
-cd smartshield-ai
+git clone https://github.com/aasthagandhi101/SmartShield-AI.git
+cd SmartShield-AI
 ```
 
 ### 2. Install dependencies
@@ -135,6 +135,7 @@ pip install -r requirements.txt
 ### 3. Train the model
 ```bash
 cd backend
+python prepare_data.py
 python train.py
 ```
 
@@ -157,15 +158,14 @@ streamlit run app.py
 1. Open Chrome → go to `chrome://extensions`
 2. Enable **Developer Mode**
 3. Click **Load unpacked** → select the `extension/` folder
-4. Make sure the FastAPI server is running
-5. Open Gmail and click the SmartShield AI icon
+4. Open Gmail and click the SmartShield AI icon
 
 ---
 
 ## 🧪 API Usage
 
 ```bash
-curl -X POST http://127.0.0.1:8000/predict \
+curl -X POST https://smartshield-ai-1.onrender.com/predict \
   -H "Content-Type: application/json" \
   -d '{"text": "Congratulations! You won a lottery. Send bank details to claim prize."}'
 ```

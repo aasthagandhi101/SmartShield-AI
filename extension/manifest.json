@@ -9,7 +9,7 @@
   ],
   "host_permissions": [
     "<all_urls>",
-    "http://127.0.0.1:8000/*"
+    "https://smartshield-ai-1.onrender.com/*"
   ],
   "action": {
     "default_popup": "popup.html"

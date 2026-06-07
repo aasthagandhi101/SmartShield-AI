@@ -20,7 +20,7 @@ document.getElementById("analyzeBtn").addEventListener("click", async () => {
         console.log("First 300 chars:", pageText.substring(0, 300));
 
         try {
-          const apiResponse = await fetch("http://127.0.0.1:8000/predict", {
+          const apiResponse = await fetch("https://smartshield-ai-1.onrender.com/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ text: pageText })
