@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "SmartShield AI",
+  "version": "1.0",
+  "description": "AI-powered phishing detection",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:8000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

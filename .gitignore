@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+env/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large files — don't push to GitHub (too big)
+# Keep locally, retrain on your machine
+data/*.csv
+backend/models/*.pkl
+
+# BUT do keep the small emails.csv (only 112 rows)
+!data/emails.csv
