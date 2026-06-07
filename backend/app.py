@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pickle
 import re
@@ -30,7 +31,6 @@ TRANSACTIONAL_PATTERNS = [
     r"estimated\s+delivery",
 ]
 
-
 SPAM_KEYWORDS = [
     "lottery", "prize", "winner", "won", "claim",
     "free", "urgent", "congratulations", "selected",
@@ -55,7 +55,6 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip().lower()
 
-
 def extract_sender_domain(text):
     match = re.search(r'[Ff]rom:\s*.*?@([\w.\-]+)', text)
     if match:
@@ -65,23 +64,22 @@ def extract_sender_domain(text):
         return match2.group(1).lower()
     return None
 
-
 def is_trusted(domain):
     if not domain:
         return False
     return any(domain == d or domain.endswith('.' + d) for d in TRUSTED_DOMAINS)
 
-
 def count_transactional(text):
     tl = text.lower()
     return sum(1 for p in TRANSACTIONAL_PATTERNS if re.search(p, tl))
 
-
 @st.cache_resource
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def load_model():
-    with open("models/spam_model.pkl", "rb") as f:
+    with open(os.path.join(BASE_DIR, "models", "spam_model.pkl"), "rb") as f:
         model = pickle.load(f)
-    with open("models/vectorizer.pkl", "rb") as f:
+    with open(os.path.join(BASE_DIR, "models", "vectorizer.pkl"), "rb") as f:
         vec = pickle.load(f)
     return model, vec
 
