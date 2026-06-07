@@ -12,7 +12,7 @@ I trained a TF-IDF + Logistic Regression model on 97,000+ spam, phishing, and le
 
 ## 🌐 Live Demo
 
-- - **Web App:** [smartshield-detector.streamlit.app](https://smartshield-detector.streamlit.app)
+- **Web App:** https://smartshield-spam-detector.streamlit.app/
 - **API:** [smartshield-ai-1.onrender.com](https://smartshield-ai-1.onrender.com)
 
 ---
