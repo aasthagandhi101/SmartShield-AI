@@ -6,13 +6,13 @@
 
 ## 👩‍💻 What I Built
 
-I trained an ML model on 97,000+ spam and phishing messages, wrapped it in a FastAPI REST API, and deployed it as both a Chrome Extension and a Streamlit web app. When the model kept flagging legitimate Indian emails (Nykaa orders, HDFC OTPs, Instagram codes) as spam, I fixed it by adding real-world Indian email samples to the training data and building a rule layer that adjusts predictions based on trusted sender domains and transactional signals. I also built a feedback pipeline so wrong predictions can be added back to the dataset and the model retrained — making it improve over time.
+I trained a TF-IDF + Logistic Regression model on 97,000+ spam, phishing, and legitimate messages., wrapped it in a FastAPI REST API, and deployed it as both a Chrome Extension and a Streamlit web app. When the model kept flagging legitimate Indian emails (Nykaa orders, HDFC OTPs, Instagram codes) as spam, I fixed it by adding real-world Indian email samples to the training data and building a rule layer that adjusts predictions based on trusted sender domains and transactional signals. I also built a feedback pipeline so wrong predictions can be added back to the dataset and the model retrained — making it improve over time.
 
 ---
 
 ## 🌐 Live Demo
 
-- **Web App:** [smartshield-ai.streamlit.app](https://smartshield-ai.streamlit.app)
+- - **Web App:** [smartshield-detector.streamlit.app](https://smartshield-detector.streamlit.app)
 - **API:** [smartshield-ai-1.onrender.com](https://smartshield-ai-1.onrender.com)
 
 ---
